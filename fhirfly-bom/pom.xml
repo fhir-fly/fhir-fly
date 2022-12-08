@@ -8,13 +8,28 @@
         <groupId>io.fhirfly</groupId>
         <artifactId>fhirfly</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>fhirfly-bom</artifactId>
+    <packaging>pom</packaging>
 
     <name>FhirFly - BOM</name>
     <description>FhirFly bill of material. See README.md for details.</description>
 
     <properties>
+        <quarkus.version>2.14.3.Final</quarkus.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-bom</artifactId>
+                <version>${quarkus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
